@@ -1,0 +1,40 @@
+PODS:
+  - Base32 (1.1.2)
+  - CryptoSwift (0.7.0)
+  - Masonry (1.1.0)
+  - OneTimePassword (3.0):
+    - Base32 (~> 1.1.2)
+  - Result (3.2.4)
+  - TrueTime (4.1.5):
+    - Result (~> 3.0)
+  - ZBarSDK (1.3.1)
+
+DEPENDENCIES:
+  - CryptoSwift (from `https://github.com/krzyzanowskim/CryptoSwift`, branch `swift32`)
+  - Masonry (~> 1.1.0)
+  - OneTimePassword (~> 3.0)
+  - TrueTime
+  - ZBarSDK (~> 1.3.1)
+
+EXTERNAL SOURCES:
+  CryptoSwift:
+    :branch: swift32
+    :git: https://github.com/krzyzanowskim/CryptoSwift
+
+CHECKOUT OPTIONS:
+  CryptoSwift:
+    :commit: 036edc3f858f9a7d9db765688418ea55be64e941
+    :git: https://github.com/krzyzanowskim/CryptoSwift
+
+SPEC CHECKSUMS:
+  Base32: 163c298644d184e89ca4e00a996bad6bf5166390
+  CryptoSwift: 47c539f7f73369cdd623942bfe4e4eeb56dfc3e7
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  OneTimePassword: 7f116451e8a4b55e385dc0191966798ca3180c9d
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  TrueTime: b66f31a33ebfa6f52532fcb04fb485e9e0c2cafb
+  ZBarSDK: 4c1b5daeb7d6cc67dc9355e690af0230a661f6ec
+
+PODFILE CHECKSUM: 1e729e4a16381f0bb97c071899653d48ef7a4ab7
+
+COCOAPODS: 1.2.1

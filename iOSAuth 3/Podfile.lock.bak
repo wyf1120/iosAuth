@@ -1,0 +1,34 @@
+PODS:
+  - Base32 (1.1.2)
+  - CryptoSwift (0.7.0)
+  - OneTimePassword (3.0):
+    - Base32 (~> 1.1.2)
+  - Result (3.1.0)
+  - TrueTime (4.1.0):
+    - Result (~> 3.0)
+
+DEPENDENCIES:
+  - CryptoSwift (from `https://github.com/krzyzanowskim/CryptoSwift`, branch `swift32`)
+  - OneTimePassword (~> 3.0)
+  - TrueTime
+
+EXTERNAL SOURCES:
+  CryptoSwift:
+    :branch: swift32
+    :git: https://github.com/krzyzanowskim/CryptoSwift
+
+CHECKOUT OPTIONS:
+  CryptoSwift:
+    :commit: 036edc3f858f9a7d9db765688418ea55be64e941
+    :git: https://github.com/krzyzanowskim/CryptoSwift
+
+SPEC CHECKSUMS:
+  Base32: 163c298644d184e89ca4e00a996bad6bf5166390
+  CryptoSwift: 47c539f7f73369cdd623942bfe4e4eeb56dfc3e7
+  OneTimePassword: 7f116451e8a4b55e385dc0191966798ca3180c9d
+  Result: 4e3ed5995ed94d0cd6a09be9a431fce3f3624bbf
+  TrueTime: 5d750f90fdaa3e50632d56b2f34b55a267defa92
+
+PODFILE CHECKSUM: 48d95e0fa5afcb46928402eb57eb229475edea2a
+
+COCOAPODS: 1.3.1
