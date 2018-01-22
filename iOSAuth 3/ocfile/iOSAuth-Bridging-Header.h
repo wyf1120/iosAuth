@@ -5,3 +5,4 @@
 #import "alterView.h"
 #import "DMCAlertCenter.h"
 #import "LeftSlideViewController.h"
+#import "accountDetailController.h"
