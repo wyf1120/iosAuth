@@ -19,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor whiteColor];
+    
     self.navigationItem.title = @"账户详细信息";
     
     UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];

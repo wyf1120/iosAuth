@@ -108,7 +108,7 @@ class MainController: UIViewController ,WebSocketConnectionDelegate,scanQRCodeCo
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.navigationController?.pushViewController(cellDetailController(), animated: true)
+        self.navigationController?.pushViewController(accountDetailController(), animated: true)
 
     }
     
