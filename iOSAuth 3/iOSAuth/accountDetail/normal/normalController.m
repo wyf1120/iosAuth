@@ -7,8 +7,8 @@
 //
 
 #import "normalController.h"
-
-@interface normalController ()
+#import "normalAccountCell.h"
+@interface normalController ()<UITableViewDelegate,UITableViewDataSource>
 
 @end
 
@@ -16,8 +16,38 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = [UIColor whiteColor];
+    [self configUI];
+    //self.view.backgroundColor = [UIColor redColor];
     // Do any additional setup after loading the view.
+}
+
+-(void)configUI
+{
+    UITableView *tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-104) style:UITableViewStylePlain];
+    tableview.delegate = self;
+    tableview.dataSource = self;
+    tableview.tableFooterView = [UIView new];
+    [tableview registerClass:[normalAccountCell class] forCellReuseIdentifier:@"cell"];
+    tableview.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self.view addSubview:tableview];
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 8;
+}
+
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    normalAccountCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 155*HEIGHT;
 }
 
 - (void)didReceiveMemoryWarning {

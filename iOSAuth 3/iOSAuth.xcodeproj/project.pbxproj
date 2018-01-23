@@ -41,6 +41,9 @@
 		A4D3751F2014E76300EE71FE /* blockChainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4D3751D2014E76300EE71FE /* blockChainCell.xib */; };
 		A4D375212015977900EE71FE /* bluetoothCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D375202015977900EE71FE /* bluetoothCell.swift */; };
 		A4D375232015D41800EE71FE /* blueToothController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D375222015D41800EE71FE /* blueToothController.swift */; };
+		A4D375242016D7DB00EE71FE /* YSLContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4758BCE201633AE00A976AF /* YSLContainerViewController.m */; };
+		A4D375252016D80200EE71FE /* YSLScrollMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4758BCA201633AD00A976AF /* YSLScrollMenuView.m */; };
+		A4D375292016E39F00EE71FE /* normalAccountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D375282016E39F00EE71FE /* normalAccountCell.m */; };
 		A4E855161E6D76C100F09370 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E855151E6D76C100F09370 /* MainTableViewController.swift */; };
 		D7F33533280ECD7CAAB53DD0 /* Pods_iOSAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C34197F278C2F3762680F4A2 /* Pods_iOSAuth.framework */; };
 		FCF1C14D1FC676880019F764 /* ConstraintInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF1C12D1FC676840019F764 /* ConstraintInsetTarget.swift */; };
@@ -148,6 +151,9 @@
 		A4D3751D2014E76300EE71FE /* blockChainCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = blockChainCell.xib; sourceTree = "<group>"; };
 		A4D375202015977900EE71FE /* bluetoothCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bluetoothCell.swift; sourceTree = "<group>"; };
 		A4D375222015D41800EE71FE /* blueToothController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blueToothController.swift; sourceTree = "<group>"; };
+		A4D375262016D8BA00EE71FE /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		A4D375272016E39F00EE71FE /* normalAccountCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = normalAccountCell.h; sourceTree = "<group>"; };
+		A4D375282016E39F00EE71FE /* normalAccountCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = normalAccountCell.m; sourceTree = "<group>"; };
 		A4E855151E6D76C100F09370 /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainT\U0003\U0003\U0003\U0003\U0003\U0003\U0003\U0003\U0003\U0003ableViewController.swift"; sourceTree = "<group>"; };
 		C34197F278C2F3762680F4A2 /* Pods_iOSAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF1C12D1FC676840019F764 /* ConstraintInsetTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintInsetTarget.swift; sourceTree = "<group>"; };
@@ -326,6 +332,8 @@
 			children = (
 				A4758BD42016355E00A976AF /* normalController.h */,
 				A4758BD52016355E00A976AF /* normalController.m */,
+				A4D375272016E39F00EE71FE /* normalAccountCell.h */,
+				A4D375282016E39F00EE71FE /* normalAccountCell.m */,
 			);
 			path = normal;
 			sourceTree = "<group>";
@@ -367,6 +375,7 @@
 		A4B2C9632008676500D8352A /* ocfile */ = {
 			isa = PBXGroup;
 			children = (
+				A4D375262016D8BA00EE71FE /* PrefixHeader.pch */,
 				A4C082FC200C8C8B00EF0B08 /* DMCAlertCenter.h */,
 				A4C082FB200C8C8B00EF0B08 /* DMCAlertCenter.m */,
 				A4C082F9200C55B500EF0B08 /* alterView.h */,
@@ -685,6 +694,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4D375252016D80200EE71FE /* YSLScrollMenuView.m in Sources */,
+				A4D375242016D7DB00EE71FE /* YSLContainerViewController.m in Sources */,
 				FCF1C1681FC676880019F764 /* Constraint.swift in Sources */,
 				FCF1C14E1FC676880019F764 /* ConstraintOffsetTarget.swift in Sources */,
 				A4771C7A20134C8500A42514 /* deviceConnectionCell.swift in Sources */,
@@ -698,6 +709,7 @@
 				FCF1C15C1FC676880019F764 /* ConstraintView+Extensions.swift in Sources */,
 				A4D375232015D41800EE71FE /* blueToothController.swift in Sources */,
 				A4771C812013953000A42514 /* LeftSlideViewController.m in Sources */,
+				A4D375292016E39F00EE71FE /* normalAccountCell.m in Sources */,
 				FCF1C1631FC676880019F764 /* LayoutConstraint.swift in Sources */,
 				FCF1C1551FC676880019F764 /* ConstraintConfig.swift in Sources */,
 				FCF1C15B1FC676880019F764 /* ConstraintRelatableTarget.swift in Sources */,
@@ -894,14 +906,17 @@
 				CODE_SIGN_ENTITLEMENTS = iOSAuth/iOSAuth.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: hz549120062@me.com (XFKZS6J77P)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = BZZD9JNU3F;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ocfile/PrefixHeader.pch";
 				INFOPLIST_FILE = iOSAuth/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Quincy.iOSAut;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Quincy.iOSAu;
 				PRODUCT_MODULE_NAME = iOSAuthModule;
 				PRODUCT_NAME = iOSAuthModule;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ocfile/iOSAuth-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -917,14 +932,17 @@
 				CODE_SIGN_ENTITLEMENTS = iOSAuth/iOSAuth.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: hz549120062@me.com (XFKZS6J77P)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = BZZD9JNU3F;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ocfile/PrefixHeader.pch";
 				INFOPLIST_FILE = iOSAuth/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Quincy.iOSAut;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Quincy.iOSAu;
 				PRODUCT_MODULE_NAME = iOSAuthModule;
 				PRODUCT_NAME = iOSAuthModule;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ocfile/iOSAuth-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
