@@ -19,6 +19,9 @@
 		A44AA4201E6D144A00C6247E /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44AA41F1E6D144A00C6247E /* QRScannerViewController.swift */; };
 		A44B097F1E76596900A9F51C /* ActiveConnectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44B097E1E76596900A9F51C /* ActiveConnectionTableViewCell.swift */; };
 		A4515B531E71014E00BB65A9 /* WebSocketConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4515B521E71014E00BB65A9 /* WebSocketConnection.swift */; };
+		A4758BD12016341800A976AF /* accountDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4758BD02016341800A976AF /* accountDetailController.m */; };
+		A4758BD62016355E00A976AF /* normalController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4758BD52016355E00A976AF /* normalController.m */; };
+		A4758BD92016357000A976AF /* abnormalController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4758BD82016357000A976AF /* abnormalController.m */; };
 		A4771C732011F4DA00A42514 /* leftSlideController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4771C722011F4DA00A42514 /* leftSlideController.swift */; };
 		A4771C752011FA9200A42514 /* leftSortsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4771C742011FA9200A42514 /* leftSortsController.swift */; };
 		A4771C7720134B7100A42514 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4771C7620134B7100A42514 /* MainController.swift */; };
@@ -108,6 +111,16 @@
 		A44AA41F1E6D144A00C6247E /* QRScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
 		A44B097E1E76596900A9F51C /* ActiveConnectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveConnectionTableViewCell.swift; sourceTree = "<group>"; };
 		A4515B521E71014E00BB65A9 /* WebSocketConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSocketConnection.swift; sourceTree = "<group>"; };
+		A4758BC9201633AD00A976AF /* YSLScrollMenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YSLScrollMenuView.h; sourceTree = "<group>"; };
+		A4758BCA201633AD00A976AF /* YSLScrollMenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YSLScrollMenuView.m; sourceTree = "<group>"; };
+		A4758BCD201633AE00A976AF /* YSLContainerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YSLContainerViewController.h; sourceTree = "<group>"; };
+		A4758BCE201633AE00A976AF /* YSLContainerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YSLContainerViewController.m; sourceTree = "<group>"; };
+		A4758BCF2016341800A976AF /* accountDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = accountDetailController.h; sourceTree = "<group>"; };
+		A4758BD02016341800A976AF /* accountDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = accountDetailController.m; sourceTree = "<group>"; };
+		A4758BD42016355E00A976AF /* normalController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = normalController.h; sourceTree = "<group>"; };
+		A4758BD52016355E00A976AF /* normalController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = normalController.m; sourceTree = "<group>"; };
+		A4758BD72016357000A976AF /* abnormalController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = abnormalController.h; sourceTree = "<group>"; };
+		A4758BD82016357000A976AF /* abnormalController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = abnormalController.m; sourceTree = "<group>"; };
 		A4771C722011F4DA00A42514 /* leftSlideController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = leftSlideController.swift; sourceTree = "<group>"; };
 		A4771C742011FA9200A42514 /* leftSortsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = leftSortsController.swift; sourceTree = "<group>"; };
 		A4771C7620134B7100A42514 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
@@ -262,6 +275,7 @@
 		A433366E1E695BFF00296C3B /* iOSAuth */ = {
 			isa = PBXGroup;
 			children = (
+				A4758BC82016336000A976AF /* accountDetail */,
 				A44562C81E763BF700ABE337 /* iOSAuth.entitlements */,
 				A433366F1E695BFF00296C3B /* AppDelegate.swift */,
 				A43336731E695BFF00296C3B /* Main.storyboard */,
@@ -290,6 +304,39 @@
 				A43336861E695BFF00296C3B /* Info.plist */,
 			);
 			path = iOSAuthTests;
+			sourceTree = "<group>";
+		};
+		A4758BC82016336000A976AF /* accountDetail */ = {
+			isa = PBXGroup;
+			children = (
+				A4758BD32016352E00A976AF /* abnormal */,
+				A4758BD22016351E00A976AF /* normal */,
+				A4758BCD201633AE00A976AF /* YSLContainerViewController.h */,
+				A4758BCE201633AE00A976AF /* YSLContainerViewController.m */,
+				A4758BC9201633AD00A976AF /* YSLScrollMenuView.h */,
+				A4758BCA201633AD00A976AF /* YSLScrollMenuView.m */,
+				A4758BCF2016341800A976AF /* accountDetailController.h */,
+				A4758BD02016341800A976AF /* accountDetailController.m */,
+			);
+			path = accountDetail;
+			sourceTree = "<group>";
+		};
+		A4758BD22016351E00A976AF /* normal */ = {
+			isa = PBXGroup;
+			children = (
+				A4758BD42016355E00A976AF /* normalController.h */,
+				A4758BD52016355E00A976AF /* normalController.m */,
+			);
+			path = normal;
+			sourceTree = "<group>";
+		};
+		A4758BD32016352E00A976AF /* abnormal */ = {
+			isa = PBXGroup;
+			children = (
+				A4758BD72016357000A976AF /* abnormalController.h */,
+				A4758BD82016357000A976AF /* abnormalController.m */,
+			);
+			path = abnormal;
 			sourceTree = "<group>";
 		};
 		A4771C712011F47D00A42514 /* leftSilde */ = {
@@ -670,6 +717,7 @@
 				FCF1C1661FC676880019F764 /* ConstraintDSL.swift in Sources */,
 				A4771C7720134B7100A42514 /* MainController.swift in Sources */,
 				A439BA881E6ED1A500769EA8 /* AuthenticationPushViewController.swift in Sources */,
+				A4758BD12016341800A976AF /* accountDetailController.m in Sources */,
 				FCF1C14D1FC676880019F764 /* ConstraintInsetTarget.swift in Sources */,
 				FCF1C1531FC676880019F764 /* ConstraintMultiplierTarget.swift in Sources */,
 				FCF1C16C1FC676880019F764 /* ConstraintLayoutGuide+Extensions.swift in Sources */,
@@ -681,6 +729,7 @@
 				FCF1C1691FC676880019F764 /* ConstraintPriorityTarget.swift in Sources */,
 				A4D375212015977900EE71FE /* bluetoothCell.swift in Sources */,
 				FCF1C1701FC676940019F764 /* SSLSecurity.swift in Sources */,
+				A4758BD62016355E00A976AF /* normalController.m in Sources */,
 				A4E855161E6D76C100F09370 /* MainTableViewController.swift in Sources */,
 				FCF1C15F1FC676880019F764 /* ConstraintLayoutSupport.swift in Sources */,
 				A430A9E11E9D278F0067F15D /* WifiViewController.swift in Sources */,
@@ -697,6 +746,7 @@
 				FCF1C1641FC676880019F764 /* UILayoutSupport+Extensions.swift in Sources */,
 				A4771C752011FA9200A42514 /* leftSortsController.swift in Sources */,
 				FCF1C1601FC676880019F764 /* ConstraintLayoutGuide.swift in Sources */,
+				A4758BD92016357000A976AF /* abnormalController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

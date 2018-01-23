@@ -16,10 +16,23 @@ class blueToothController: UIViewController ,UITableViewDelegate,UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationItem.title = "蓝牙设备列表"
+        
+        let backBtn = UIButton(type: .custom)
+        backBtn.setBackgroundImage(UIImage.init(named: "back"), for: .normal)
+        backBtn.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+        backBtn.addTarget(self, action: #selector(backBtnClick), for: .touchUpInside)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backBtn)
+        
         configUI()
         // Do any additional setup after loading the view.
     }
 
+    func backBtnClick()  {
+        
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     func configUI() {
         let tableview = UITableView(frame: self.view.bounds, style: .plain)
         tableview.delegate = self
