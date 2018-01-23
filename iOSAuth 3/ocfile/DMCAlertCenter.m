@@ -14,7 +14,6 @@
 - (void) setImage:(UIImage*)image;
 
 @end
-
 #pragma mark -
 @implementation DMCAlertView
 

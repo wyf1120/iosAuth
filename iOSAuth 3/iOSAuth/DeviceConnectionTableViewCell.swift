@@ -16,7 +16,6 @@ class DeviceConnectionTableViewCell: UITableViewCell {
     
     @IBOutlet weak var timeLab: UILabel!
     
-    
     var connection: WebSocketConnection?
     
     
