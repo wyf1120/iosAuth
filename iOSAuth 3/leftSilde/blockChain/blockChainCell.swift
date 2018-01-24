@@ -75,6 +75,7 @@ class blockChainCell: UITableViewCell {
         lineView1.backgroundColor = UIColor.gray
         self.contentView.addSubview(lineView1)
         
+        
         lineView.snp.makeConstraints { (make) in
             make.top.equalToSuperview().offset(0)
             make.bottom.equalToSuperview().offset(0)
@@ -126,6 +127,7 @@ class blockChainCell: UITableViewCell {
             make.left.right.equalToSuperview().offset(0)
             make.height.equalTo(1)
         }
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

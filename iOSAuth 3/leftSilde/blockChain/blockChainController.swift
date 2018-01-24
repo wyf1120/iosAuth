@@ -16,7 +16,10 @@ class blockChainController: UIViewController,UITableViewDelegate,UITableViewData
     
     var textArr = ["联盟成员数量","区块平均产生时间","区块高度","距上次出块时间"];
     
+    let xAxisData = ["0","10分钟前","20分钟前","30分钟前","40分钟前","50分钟前","60分钟前",]
+    let yAxisData = [0,0,5.0,12.0,8.0,20.2,25.5]
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,41 +42,60 @@ class blockChainController: UIViewController,UITableViewDelegate,UITableViewData
         tabelview.dataSource = self
         tabelview.tableFooterView = UIView()
         tabelview.register(blockChainCell.self, forCellReuseIdentifier: "cell")
+        tabelview.register(lineChartViewCell.self, forCellReuseIdentifier: "lineCell")
         tabelview.separatorStyle = .none
         self.view.addSubview(tabelview)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:blockChainCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! blockChainCell
-        cell.selectionStyle = .none
         
-        if indexPath.row == 0 {
-            cell.leftView?.backgroundColor = colorArr[0]
-            cell.leftNumLab?.text = nummberArr[0]
-            cell.leftTextLab?.text = textArr[0]
-            cell.rightView?.backgroundColor = colorArr[1]
-            cell.rightNumLab?.text = nummberArr[1]
-            cell.rightTextLab?.text = textArr[0]
+        if indexPath.row != 2 {
+            let cell:blockChainCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! blockChainCell
+            cell.selectionStyle = .none
+            
+            if indexPath.row == 0 {
+                cell.leftView?.backgroundColor = colorArr[0]
+                cell.leftNumLab?.text = nummberArr[0]
+                cell.leftTextLab?.text = textArr[0]
+                cell.rightView?.backgroundColor = colorArr[1]
+                cell.rightNumLab?.text = nummberArr[1]
+                cell.rightTextLab?.text = textArr[0]
+            }
+            else if indexPath.row == 1
+            {
+                cell.leftView?.backgroundColor = colorArr[2]
+                cell.leftNumLab?.text = nummberArr[2]
+                cell.leftTextLab?.text = textArr[2]
+                cell.rightView?.backgroundColor = colorArr[3]
+                cell.rightNumLab?.text = nummberArr[3]
+                cell.rightTextLab?.text = textArr[3]
+            }
+            return cell
         }
         else
         {
-            cell.leftView?.backgroundColor = colorArr[2]
-            cell.leftNumLab?.text = nummberArr[2]
-            cell.leftTextLab?.text = textArr[2]
-            cell.rightView?.backgroundColor = colorArr[3]
-            cell.rightNumLab?.text = nummberArr[3]
-            cell.rightTextLab?.text = textArr[3]
+            let lineCell:lineChartViewCell = tableView.dequeueReusableCell(withIdentifier: "lineCell", for: indexPath) as! lineChartViewCell
+            lineCell.selectionStyle = .none
+            lineCell.setChart(xAxisData, values: yAxisData)
+            return lineCell
         }
         
-        return cell
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 110
+        if indexPath.row == 2 {
+            return 300
+        }
+        else
+        {
+            return 110
+        }
+        
     }
     
     func backBtnClick()  {
