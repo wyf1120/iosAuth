@@ -923,7 +923,7 @@
 				DEVELOPMENT_TEAM = BZZD9JNU3F;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ocfile/PrefixHeader.pch";
 				INFOPLIST_FILE = iOSAuth/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Quincy.iOSAu;
 				PRODUCT_MODULE_NAME = iOSAuthModule;
@@ -950,7 +950,7 @@
 				DEVELOPMENT_TEAM = BZZD9JNU3F;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ocfile/PrefixHeader.pch";
 				INFOPLIST_FILE = iOSAuth/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Quincy.iOSAu;
 				PRODUCT_MODULE_NAME = iOSAuthModule;
