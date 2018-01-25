@@ -46,6 +46,9 @@
 		A4D375292016E39F00EE71FE /* normalAccountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D375282016E39F00EE71FE /* normalAccountCell.m */; };
 		A4D3757320187AB700EE71FE /* linechart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D3757220187AB700EE71FE /* linechart.swift */; };
 		A4D375752018839900EE71FE /* lineChartViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D375742018839900EE71FE /* lineChartViewCell.swift */; };
+		A4D3757720197D9400EE71FE /* chuBlcokCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D3757620197D9400EE71FE /* chuBlcokCell.swift */; };
+		A4D3757920197E9200EE71FE /* chuBlockCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D3757820197E9200EE71FE /* chuBlockCell1.swift */; };
+		A4D3757B2019B39500EE71FE /* abnormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D3757A2019B39500EE71FE /* abnormalCell.swift */; };
 		A4E855161E6D76C100F09370 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E855151E6D76C100F09370 /* MainTableViewController.swift */; };
 		D7F33533280ECD7CAAB53DD0 /* Pods_iOSAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C34197F278C2F3762680F4A2 /* Pods_iOSAuth.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		FCF1C14D1FC676880019F764 /* ConstraintInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF1C12D1FC676840019F764 /* ConstraintInsetTarget.swift */; };
@@ -159,6 +162,9 @@
 		A4D375712018746B00EE71FE /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4D3757220187AB700EE71FE /* linechart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = linechart.swift; sourceTree = "<group>"; };
 		A4D375742018839900EE71FE /* lineChartViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lineChartViewCell.swift; sourceTree = "<group>"; };
+		A4D3757620197D9400EE71FE /* chuBlcokCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chuBlcokCell.swift; sourceTree = "<group>"; };
+		A4D3757820197E9200EE71FE /* chuBlockCell1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chuBlockCell1.swift; sourceTree = "<group>"; };
+		A4D3757A2019B39500EE71FE /* abnormalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = abnormalCell.swift; sourceTree = "<group>"; };
 		A4E855151E6D76C100F09370 /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainT\U0003\U0003\U0003\U0003\U0003\U0003\U0003\U0003\U0003\U0003ableViewController.swift"; sourceTree = "<group>"; };
 		C34197F278C2F3762680F4A2 /* Pods_iOSAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF1C12D1FC676840019F764 /* ConstraintInsetTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintInsetTarget.swift; sourceTree = "<group>"; };
@@ -349,6 +355,7 @@
 			children = (
 				A4758BD72016357000A976AF /* abnormalController.h */,
 				A4758BD82016357000A976AF /* abnormalController.m */,
+				A4D3757A2019B39500EE71FE /* abnormalCell.swift */,
 			);
 			path = abnormal;
 			sourceTree = "<group>";
@@ -412,6 +419,8 @@
 				A4D3751D2014E76300EE71FE /* blockChainCell.xib */,
 				A4D3757220187AB700EE71FE /* linechart.swift */,
 				A4D375742018839900EE71FE /* lineChartViewCell.swift */,
+				A4D3757620197D9400EE71FE /* chuBlcokCell.swift */,
+				A4D3757820197E9200EE71FE /* chuBlockCell1.swift */,
 			);
 			path = blockChain;
 			sourceTree = "<group>";
@@ -529,7 +538,7 @@
 				TargetAttributes = {
 					A433366B1E695BFF00296C3B = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = BZZD9JNU3F;
+						DevelopmentTeam = JMEPB229N9;
 						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -710,6 +719,7 @@
 				FCF1C1591FC676880019F764 /* Debugging.swift in Sources */,
 				A4771C8420139E9000A42514 /* leftSlideDetailController.swift in Sources */,
 				FCF1C1511FC676880019F764 /* LayoutConstraintItem.swift in Sources */,
+				A4D3757720197D9400EE71FE /* chuBlcokCell.swift in Sources */,
 				FCF1C1581FC676880019F764 /* ConstraintMakerFinalizable.swift in Sources */,
 				A4B2C972200A716C00D8352A /* QRView.m in Sources */,
 				FCF1C15D1FC676880019F764 /* ConstraintLayoutSupportDSL.swift in Sources */,
@@ -757,6 +767,8 @@
 				A4B2C973200A716C00D8352A /* ScanQRCodeViewController.m in Sources */,
 				FCF1C1571FC676880019F764 /* ConstraintMakerEditable.swift in Sources */,
 				A4D3757320187AB700EE71FE /* linechart.swift in Sources */,
+				A4D3757920197E9200EE71FE /* chuBlockCell1.swift in Sources */,
+				A4D3757B2019B39500EE71FE /* abnormalCell.swift in Sources */,
 				FCF1C1651FC676880019F764 /* ConstraintMakerPriortizable.swift in Sources */,
 				A4D375752018839900EE71FE /* lineChartViewCell.swift in Sources */,
 				A4515B531E71014E00BB65A9 /* WebSocketConnection.swift in Sources */,
@@ -920,12 +932,12 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = BZZD9JNU3F;
+				DEVELOPMENT_TEAM = JMEPB229N9;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ocfile/PrefixHeader.pch";
 				INFOPLIST_FILE = iOSAuth/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Quincy.iOSAu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Quincy.iOSAuthWyf;
 				PRODUCT_MODULE_NAME = iOSAuthModule;
 				PRODUCT_NAME = iOSAuthModule;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -947,12 +959,12 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = BZZD9JNU3F;
+				DEVELOPMENT_TEAM = JMEPB229N9;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ocfile/PrefixHeader.pch";
 				INFOPLIST_FILE = iOSAuth/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Quincy.iOSAu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Quincy.iOSAuthWyf;
 				PRODUCT_MODULE_NAME = iOSAuthModule;
 				PRODUCT_NAME = iOSAuthModule;
 				PROVISIONING_PROFILE_SPECIFIER = "";

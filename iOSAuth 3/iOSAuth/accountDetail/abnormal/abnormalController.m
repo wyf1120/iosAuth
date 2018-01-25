@@ -7,8 +7,8 @@
 //
 
 #import "abnormalController.h"
-
-@interface abnormalController ()
+//#import "abnormalCell.swift"
+@interface abnormalController ()<UITableViewDelegate,UITableViewDataSource>
 
 @end
 
@@ -16,8 +16,42 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self configUI];
     //self.view.backgroundColor = [UIColor greenColor];
     // Do any additional setup after loading the view.
+}
+
+-(void)configUI
+{
+    
+    UITableView *tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-104) style:UITableViewStylePlain];
+    tableview.delegate = self;
+    tableview.dataSource = self;
+    tableview.tableFooterView = [UIView new];
+    [tableview registerClass:[abnormalCell class] forCellReuseIdentifier:@"cell"];
+    tableview.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self.view addSubview:tableview];
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row ==0) {
+        abnormalCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return cell;
+    }
+    UITableViewCell *cell;
+    return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 170;
 }
 
 - (void)didReceiveMemoryWarning {

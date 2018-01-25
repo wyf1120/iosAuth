@@ -18,6 +18,14 @@ class blockChainController: UIViewController,UITableViewDelegate,UITableViewData
     
     let xAxisData = ["0","10分钟前","20分钟前","30分钟前","40分钟前","50分钟前","60分钟前",]
     let yAxisData = [0,0,5.0,12.0,8.0,20.2,25.5]
+    let chuBlockArr = [" 出块时间"," 哈希值"," 出块者"]
+    let chuBlockArr1 = [["time":" 2018.1.25","hash":" qwer123","chukuai":" laowang"],
+                        ["time":" 2018.1.25","hash":" qwer123","chukuai":" laowang"],
+                        ["time":" 2018.1.25","hash":" qwer123","chukuai":" laowang"],
+                        ["time":" 2018.1.25","hash":" qwer123","chukuai":" laowang"],
+                        ["time":" 2018.1.25","hash":" qwer123","chukuai":" laowang"],
+                        ["time":" 2018.1.25","hash":" qwer123","chukuai":" laowang"]]
+    
     
 
     override func viewDidLoad() {
@@ -43,17 +51,20 @@ class blockChainController: UIViewController,UITableViewDelegate,UITableViewData
         tabelview.tableFooterView = UIView()
         tabelview.register(blockChainCell.self, forCellReuseIdentifier: "cell")
         tabelview.register(lineChartViewCell.self, forCellReuseIdentifier: "lineCell")
+        tabelview.register(chuBlcokCell.self, forCellReuseIdentifier: "chucell")
+        tabelview.register(chuBlockCell1.self, forCellReuseIdentifier: "chucell1")
+
         tabelview.separatorStyle = .none
         self.view.addSubview(tabelview)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 3+1+chuBlockArr1.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.row != 2 {
+        if indexPath.row == 0 || indexPath.row == 1 {
             let cell:blockChainCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! blockChainCell
             cell.selectionStyle = .none
             
@@ -76,12 +87,39 @@ class blockChainController: UIViewController,UITableViewDelegate,UITableViewData
             }
             return cell
         }
-        else
+        else if indexPath.row == 2
         {
             let lineCell:lineChartViewCell = tableView.dequeueReusableCell(withIdentifier: "lineCell", for: indexPath) as! lineChartViewCell
             lineCell.selectionStyle = .none
             lineCell.setChart(xAxisData, values: yAxisData)
             return lineCell
+        }
+        else if indexPath.row == 3
+        {
+            let chucell:chuBlcokCell = tableView.dequeueReusableCell(withIdentifier: "chucell", for: indexPath) as! chuBlcokCell
+            chucell.selectionStyle = .none
+            return chucell
+            
+        }
+        else
+        {
+            let chucell1:chuBlockCell1 = tableView.dequeueReusableCell(withIdentifier: "chucell1", for: indexPath) as!chuBlockCell1
+            chucell1.selectionStyle = .none
+            if indexPath.row == 4
+            {
+                chucell1.lab.text = chuBlockArr[0]
+                chucell1.lab1.text = chuBlockArr[1]
+                chucell1.lab2.text = chuBlockArr[2]
+            }
+            else
+            {
+                chucell1.lab.text = chuBlockArr1[indexPath.row - 5]["time"]
+                chucell1.lab1.text = chuBlockArr1[indexPath.row - 5]["hash"]
+                chucell1.lab2.text = chuBlockArr1[indexPath.row - 5]["chukuai"]
+            }
+            
+            return chucell1
+            
         }
         
         
@@ -91,9 +129,17 @@ class blockChainController: UIViewController,UITableViewDelegate,UITableViewData
         if indexPath.row == 2 {
             return 300
         }
-        else
+        else if indexPath.row == 0 || indexPath.row == 1
         {
             return 110
+        }
+        else if indexPath.row == 3
+        {
+            return 30
+        }
+        else
+        {
+            return 30
         }
         
     }
