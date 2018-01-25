@@ -20,5 +20,7 @@
 #define ksWidth [UIScreen mainScreen].bounds.size.width
 #define ksHeight [UIScreen mainScreen].bounds.size.height
 
+#import "iOSAuthModule-Swift.h"
+
 #import "Masonry.h"
 
