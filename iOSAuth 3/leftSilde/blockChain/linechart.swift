@@ -42,6 +42,13 @@ class linechart: UIView {
         //        lineChart.legend.form = .square
         lineChart.legend.textColor = UIColor.black
         
+        //交互设置
+        lineChart.scaleYEnabled = false
+        lineChart.doubleTapToZoomEnabled = false
+        lineChart.dragEnabled = true
+        lineChart.dragDecelerationEnabled = true
+        lineChart.dragDecelerationFrictionCoef = 0.9
+        
         //设置X轴坐标
         lineChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: dataPoints)
         lineChart.xAxis.granularity = 1.0
@@ -50,15 +57,36 @@ class linechart: UIView {
         lineChart.xAxis.axisLineColor = UIColor.black
         lineChart.xAxis.labelTextColor = UIColor(red: 63.0/255, green: 89.0/255, blue: 152.0/255, alpha: 1)
         
+        
+        
         //设置Y轴坐标
         //        lineChart.rightAxis.isEnabled = false
+        
+        lineChart.leftAxis.axisMinimum = 0
+        lineChart.leftAxis.axisMaximum = 50
+        lineChart.leftAxis.labelCount = 5
+        lineChart.leftAxis.axisLineWidth = 0.5
+        
+        lineChart.leftAxis.axisLineColor = UIColor.black
+        //        let number:NumberFormatter = leftax.valueFormatter as! NumberFormatter
+        //        number.positiveSuffix = " %"
+        lineChart.leftAxis.labelPosition = .outsideChart
+        lineChart.leftAxis.labelTextColor = UIColor.brown
+        lineChart.leftAxis.labelFont = UIFont.systemFont(ofSize: 10)
+        
         //不显示右侧Y轴
         lineChart.rightAxis.drawAxisLineEnabled = false
         //不显示右侧Y轴数字
         lineChart.rightAxis.enabled = false
         lineChart.leftAxis.axisLineColor = UIColor(red: 63.0/255, green: 89.0/255, blue: 152.0/255, alpha: 1)
-        lineChart.leftAxis.gridColor = UIColor(red: 63.0/255, green: 89.0/255, blue: 152.0/255, alpha: 1)
+        //lineChart.leftAxis.gridColor = UIColor(red: 63.0/255, green: 89.0/255, blue: 152.0/255, alpha: 1)
         lineChart.leftAxis.labelTextColor = UIColor(red: 63.0/255, green: 89.0/255, blue: 152.0/255, alpha: 1)
+
+        
+        lineChart.leftAxis.gridLineDashLengths = [3.0,3.0]
+        lineChart.leftAxis.gridColor = UIColor(red: 200.0/255, green: 200.0/255, blue: 200.0/255, alpha: 1)
+        lineChart.leftAxis.gridAntialiasEnabled = true
+
         
         //设置双击坐标轴是否能缩放
         lineChart.scaleXEnabled = false
