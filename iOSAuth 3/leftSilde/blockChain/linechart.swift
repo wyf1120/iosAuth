@@ -75,16 +75,17 @@ class linechart: UIView {
         lineChart.leftAxis.labelFont = UIFont.systemFont(ofSize: 10)
         
         //不显示右侧Y轴
-        lineChart.rightAxis.drawAxisLineEnabled = false
+        //lineChart.rightAxis.drawAxisLineEnabled = false
         //不显示右侧Y轴数字
-        lineChart.rightAxis.enabled = false
+        //lineChart.rightAxis.enabled = false
         lineChart.leftAxis.axisLineColor = UIColor(red: 63.0/255, green: 89.0/255, blue: 152.0/255, alpha: 1)
         //lineChart.leftAxis.gridColor = UIColor(red: 63.0/255, green: 89.0/255, blue: 152.0/255, alpha: 1)
         lineChart.leftAxis.labelTextColor = UIColor(red: 63.0/255, green: 89.0/255, blue: 152.0/255, alpha: 1)
 
         
-        lineChart.leftAxis.gridLineDashLengths = [3.0,3.0]
-        lineChart.leftAxis.gridColor = UIColor(red: 200.0/255, green: 200.0/255, blue: 200.0/255, alpha: 1)
+        lineChart.leftAxis.drawGridLinesEnabled = true
+        lineChart.leftAxis.gridLineDashLengths = [5.0,5.0]
+        lineChart.leftAxis.gridColor = UIColor.red
         lineChart.leftAxis.gridAntialiasEnabled = true
 
         

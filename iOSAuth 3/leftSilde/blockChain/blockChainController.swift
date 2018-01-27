@@ -17,7 +17,7 @@ class blockChainController: UIViewController,UITableViewDelegate,UITableViewData
     var textArr = ["联盟成员数量","区块平均产生时间","区块高度","距上次出块时间"];
     
     let xAxisData = ["0","10分钟前","20分钟前","30分钟前","40分钟前","50分钟前","60分钟前",]
-    let yAxisData = [0,0,5.0,12.0,8.0,20.2,25.5]
+    let yAxisData = [2,8,5.0,12.0,8.0,20.2,25.5]
     let chuBlockArr = [" 出块时间"," 哈希值"," 出块者"]
     let chuBlockArr1 = [["time":" 2018.1.25","hash":" qwer123","chukuai":" laowang"],
                         ["time":" 2018.1.25","hash":" qwer123","chukuai":" laowang"],

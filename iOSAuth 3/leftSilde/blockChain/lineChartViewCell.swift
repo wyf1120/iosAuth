@@ -65,6 +65,13 @@ class lineChartViewCell: UITableViewCell {
         //        lineChart.legend.form = .square
         lineChart.legend.textColor = UIColor.black
         
+        //交互设置
+        lineChart.scaleYEnabled = false
+        lineChart.doubleTapToZoomEnabled = false
+        lineChart.dragEnabled = true
+        lineChart.dragDecelerationEnabled = true
+        lineChart.dragDecelerationFrictionCoef = 0.9
+        
         //设置X轴坐标
         lineChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: dataPoints)
         lineChart.xAxis.granularity = 1.0
@@ -73,18 +80,32 @@ class lineChartViewCell: UITableViewCell {
         lineChart.xAxis.axisLineColor = UIColor.black
         lineChart.xAxis.labelTextColor = UIColor(red: 63.0/255, green: 89.0/255, blue: 152.0/255, alpha: 1)
         
+        
+        
         //设置Y轴坐标
         //        lineChart.rightAxis.isEnabled = false
         //不显示右侧Y轴
+        
+        //设置Y轴显示的最大值、最小值、显示数量
+        
+//        lineChart.leftAxis.axisMinimum = 0
+//        lineChart.leftAxis.axisMaximum = 50
+//        lineChart.leftAxis.labelCount = 5
+        lineChart.leftAxis.axisLineWidth = 0.5
+        
         lineChart.rightAxis.drawAxisLineEnabled = false
         //不显示右侧Y轴数字
         lineChart.rightAxis.enabled = false
         lineChart.leftAxis.axisLineColor = UIColor(red: 63.0/255, green: 89.0/255, blue: 152.0/255, alpha: 1)
-        lineChart.leftAxis.gridColor = UIColor(red: 63.0/255, green: 89.0/255, blue: 152.0/255, alpha: 1)
         lineChart.leftAxis.labelTextColor = UIColor(red: 63.0/255, green: 89.0/255, blue: 152.0/255, alpha: 1)
         
+        lineChart.leftAxis.drawGridLinesEnabled = true
+        lineChart.leftAxis.gridLineDashLengths = [3.0,3.0]
+        lineChart.leftAxis.gridColor = UIColor(red: 63.0/255, green: 89.0/255, blue: 152.0/255, alpha: 1)
+        lineChart.leftAxis.gridAntialiasEnabled = true
+        
         //设置双击坐标轴是否能缩放
-        lineChart.scaleXEnabled = false
+        lineChart.scaleXEnabled = true
         lineChart.scaleYEnabled = false
         
         //        lineChart.dragEnabled = true
@@ -103,18 +124,21 @@ class lineChartViewCell: UITableViewCell {
         //        lineChartDataSet.lineWidth = 4
         
         //外圆
-        lineChartDataSet.setCircleColor(UIColor(red: 63.0/255, green: 89.0/255, blue: 152.0/255, alpha: 1))
+        lineChartDataSet.setCircleColor(UIColor(red: 63.0/255, green: 89.0/255, blue: 152.0/255, alpha: 0.4))
         //画外圆
         //        lineChartDataSet.drawCirclesEnabled = true
         //内圆
-        lineChartDataSet.circleHoleColor = UIColor(red: 63.0/255, green: 89.0/255, blue: 152.0/255, alpha: 1)
+        lineChartDataSet.circleHoleColor = UIColor(red: 63.0/255, green: 89.0/255, blue: 152.0/255, alpha: 0.8)
         //画内圆
         //        lineChartDataSet.drawCircleHoleEnabled = true
         
         //线条显示样式
         //        lineChartDataSet.lineDashLengths = [1,3,4,2]
         //        lineChartDataSet.lineDashPhase = 0.5
-        lineChartDataSet.colors = [UIColor(red: 63.0/255, green: 89.0/255, blue: 152.0/255, alpha: 1)]
+        //lineChartDataSet.colors = [UIColor(red: 63.0/255, green: 89.0/255, blue: 152.0/255, alpha: 1)]
+        
+        lineChartDataSet.colors = [UIColor.gray]
+        lineChartDataSet.lineWidth = 0.5
         
         //线条上的文字
         lineChartDataSet.valueColors = [UIColor(red: 63.0/255, green: 89.0/255, blue: 152.0/255, alpha: 1)]
