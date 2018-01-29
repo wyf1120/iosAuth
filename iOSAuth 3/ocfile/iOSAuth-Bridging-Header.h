@@ -6,3 +6,4 @@
 #import "DMCAlertCenter.h"
 #import "LeftSlideViewController.h"
 #import "accountDetailController.h"
+#import "normalAccountCell.h"

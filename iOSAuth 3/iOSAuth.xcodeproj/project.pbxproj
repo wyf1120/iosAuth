@@ -19,6 +19,7 @@
 		A44AA4201E6D144A00C6247E /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44AA41F1E6D144A00C6247E /* QRScannerViewController.swift */; };
 		A44B097F1E76596900A9F51C /* ActiveConnectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44B097E1E76596900A9F51C /* ActiveConnectionTableViewCell.swift */; };
 		A4515B531E71014E00BB65A9 /* WebSocketConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4515B521E71014E00BB65A9 /* WebSocketConnection.swift */; };
+		A46B8B62201EC89300055171 /* barChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46B8B61201EC89300055171 /* barChartCell.swift */; };
 		A4758BD12016341800A976AF /* accountDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4758BD02016341800A976AF /* accountDetailController.m */; };
 		A4758BD62016355E00A976AF /* normalController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4758BD52016355E00A976AF /* normalController.m */; };
 		A4758BD92016357000A976AF /* abnormalController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4758BD82016357000A976AF /* abnormalController.m */; };
@@ -30,6 +31,9 @@
 		A4771C812013953000A42514 /* LeftSlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4771C7E2013953000A42514 /* LeftSlideViewController.m */; };
 		A4771C822013953000A42514 /* UIView_extra.m in Sources */ = {isa = PBXBuildFile; fileRef = A4771C802013953000A42514 /* UIView_extra.m */; };
 		A4771C8420139E9000A42514 /* leftSlideDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4771C8320139E9000A42514 /* leftSlideDetailController.swift */; };
+		A49F745D201F1FB10010D7E0 /* abnormalDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49F745C201F1FB10010D7E0 /* abnormalDetailController.swift */; };
+		A49F745F201F20350010D7E0 /* mapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49F745E201F20350010D7E0 /* mapCell.swift */; };
+		A49F7461201F307E0010D7E0 /* normalDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49F7460201F307E0010D7E0 /* normalDetailController.swift */; };
 		A4B2C971200A716C00D8352A /* UIColor+HEX.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B2C96B200A716C00D8352A /* UIColor+HEX.m */; };
 		A4B2C972200A716C00D8352A /* QRView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B2C96C200A716C00D8352A /* QRView.m */; };
 		A4B2C973200A716C00D8352A /* ScanQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B2C970200A716C00D8352A /* ScanQRCodeViewController.m */; };
@@ -119,6 +123,7 @@
 		A44AA41F1E6D144A00C6247E /* QRScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
 		A44B097E1E76596900A9F51C /* ActiveConnectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveConnectionTableViewCell.swift; sourceTree = "<group>"; };
 		A4515B521E71014E00BB65A9 /* WebSocketConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSocketConnection.swift; sourceTree = "<group>"; };
+		A46B8B61201EC89300055171 /* barChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = barChartCell.swift; sourceTree = "<group>"; };
 		A4758BC9201633AD00A976AF /* YSLScrollMenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YSLScrollMenuView.h; sourceTree = "<group>"; };
 		A4758BCA201633AD00A976AF /* YSLScrollMenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YSLScrollMenuView.m; sourceTree = "<group>"; };
 		A4758BCD201633AE00A976AF /* YSLContainerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YSLContainerViewController.h; sourceTree = "<group>"; };
@@ -139,6 +144,9 @@
 		A4771C7F2013953000A42514 /* UIView_extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIView_extra.h; sourceTree = "<group>"; };
 		A4771C802013953000A42514 /* UIView_extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIView_extra.m; sourceTree = "<group>"; };
 		A4771C8320139E9000A42514 /* leftSlideDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = leftSlideDetailController.swift; sourceTree = "<group>"; };
+		A49F745C201F1FB10010D7E0 /* abnormalDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = abnormalDetailController.swift; sourceTree = "<group>"; };
+		A49F745E201F20350010D7E0 /* mapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapCell.swift; sourceTree = "<group>"; };
+		A49F7460201F307E0010D7E0 /* normalDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = normalDetailController.swift; sourceTree = "<group>"; };
 		A4B2C964200867C400D8352A /* iOSAuth-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOSAuth-Bridging-Header.h"; sourceTree = "<group>"; };
 		A4B2C96B200A716C00D8352A /* UIColor+HEX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HEX.m"; sourceTree = "<group>"; };
 		A4B2C96C200A716C00D8352A /* QRView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRView.m; sourceTree = "<group>"; };
@@ -335,6 +343,7 @@
 				A4758BCA201633AD00A976AF /* YSLScrollMenuView.m */,
 				A4758BCF2016341800A976AF /* accountDetailController.h */,
 				A4758BD02016341800A976AF /* accountDetailController.m */,
+				A49F745E201F20350010D7E0 /* mapCell.swift */,
 			);
 			path = accountDetail;
 			sourceTree = "<group>";
@@ -346,6 +355,7 @@
 				A4758BD52016355E00A976AF /* normalController.m */,
 				A4D375272016E39F00EE71FE /* normalAccountCell.h */,
 				A4D375282016E39F00EE71FE /* normalAccountCell.m */,
+				A49F7460201F307E0010D7E0 /* normalDetailController.swift */,
 			);
 			path = normal;
 			sourceTree = "<group>";
@@ -356,6 +366,8 @@
 				A4758BD72016357000A976AF /* abnormalController.h */,
 				A4758BD82016357000A976AF /* abnormalController.m */,
 				A4D3757A2019B39500EE71FE /* abnormalCell.swift */,
+				A46B8B61201EC89300055171 /* barChartCell.swift */,
+				A49F745C201F1FB10010D7E0 /* abnormalDetailController.swift */,
 			);
 			path = abnormal;
 			sourceTree = "<group>";
@@ -728,12 +740,15 @@
 				A4D375232015D41800EE71FE /* blueToothController.swift in Sources */,
 				A4771C812013953000A42514 /* LeftSlideViewController.m in Sources */,
 				A4D375292016E39F00EE71FE /* normalAccountCell.m in Sources */,
+				A46B8B62201EC89300055171 /* barChartCell.swift in Sources */,
 				FCF1C1631FC676880019F764 /* LayoutConstraint.swift in Sources */,
 				FCF1C1551FC676880019F764 /* ConstraintConfig.swift in Sources */,
 				FCF1C15B1FC676880019F764 /* ConstraintRelatableTarget.swift in Sources */,
 				A4D3751B2014E5EF00EE71FE /* blockChainController.swift in Sources */,
 				A4C082FF200C903E00EF0B08 /* cellDetailController.swift in Sources */,
+				A49F745F201F20350010D7E0 /* mapCell.swift in Sources */,
 				A4771C822013953000A42514 /* UIView_extra.m in Sources */,
+				A49F7461201F307E0010D7E0 /* normalDetailController.swift in Sources */,
 				A4D3751E2014E76300EE71FE /* blockChainCell.swift in Sources */,
 				FCF1C1541FC676880019F764 /* ConstraintItem.swift in Sources */,
 				A4771C732011F4DA00A42514 /* leftSlideController.swift in Sources */,
@@ -762,6 +777,7 @@
 				A4758BD62016355E00A976AF /* normalController.m in Sources */,
 				A4E855161E6D76C100F09370 /* MainTableViewController.swift in Sources */,
 				FCF1C15F1FC676880019F764 /* ConstraintLayoutSupport.swift in Sources */,
+				A49F745D201F1FB10010D7E0 /* abnormalDetailController.swift in Sources */,
 				A430A9E11E9D278F0067F15D /* WifiViewController.swift in Sources */,
 				A43336701E695BFF00296C3B /* AppDelegate.swift in Sources */,
 				A4B2C973200A716C00D8352A /* ScanQRCodeViewController.m in Sources */,

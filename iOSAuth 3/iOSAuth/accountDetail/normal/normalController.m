@@ -50,6 +50,14 @@
     return 155*HEIGHT;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+        normalDetailController *avc = [[normalDetailController alloc] init];
+        [self.navigationController pushViewController:avc animated:YES];
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
