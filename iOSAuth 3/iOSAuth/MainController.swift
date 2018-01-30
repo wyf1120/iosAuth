@@ -9,7 +9,8 @@
 import UIKit
 import CryptoSwift
 
-class MainController: UIViewController ,WebSocketConnectionDelegate,scanQRCodeControllerDelegate,UITableViewDelegate,UITableViewDataSource {
+class MainController: UIViewController ,WebSocketConnectionDelegate,scanQRCodeControllerDelegate,loginvcDelegate,UITableViewDelegate,UITableViewDataSource {
+    
     
     var connections = [String: WebSocketConnection]()
     
@@ -29,6 +30,35 @@ class MainController: UIViewController ,WebSocketConnectionDelegate,scanQRCodeCo
         super.viewDidLoad()
 
         self.view.backgroundColor = UIColor.white
+        
+        let loginValue = UserDefaults.standard.value(forKey: "loginSuccess")
+        if loginValue == nil {
+            let loginVC = loginController()
+            loginVC.delegate = self
+            loginVC.loginSuccess = "no"
+            self.present(loginVC, animated: true, completion: nil)
+        }
+        else
+        {
+            let value = UserDefaults.standard.value(forKey: "DeviceIdentifiers")
+            
+            if (value != nil) {
+                print(value!);
+            }
+            
+            if let devices = value as? [String] {
+                for device in devices {
+                    let wsc = WebSocketConnection(id: device)
+                    
+                    currentConnection = wsc
+                    
+                    wsc.delegate = self
+                    wsc.webSocketConnect()
+                    connections[device] = wsc            }
+            }
+            
+            self.tableview?.reloadData()
+        }
         
         self.tableview = UITableView(frame: self.view.bounds, style: .plain)
         self.tableview?.register(UINib.init(nibName: "deviceConnectionCell", bundle: nil), forCellReuseIdentifier: "cell")
@@ -53,25 +83,7 @@ class MainController: UIViewController ,WebSocketConnectionDelegate,scanQRCodeCo
         //        tableView.rowHeight = UITableViewAutomaticDimension
         self.tableview?.tableFooterView = UIView()
         
-        let value = UserDefaults.standard.value(forKey: "DeviceIdentifiers")
         
-        if (value != nil) {
-            print(value!);
-        }
-        
-        
-        if let devices = value as? [String] {
-            for device in devices {
-                let wsc = WebSocketConnection(id: device)
-                
-                currentConnection = wsc
-                
-                wsc.delegate = self as? WebSocketConnectionDelegate
-                wsc.webSocketConnect()
-                connections[device] = wsc            }
-        }
-        
-        self.tableview?.reloadData()
         
         // Do any additional setup after loading the view.
     }
@@ -290,6 +302,31 @@ class MainController: UIViewController ,WebSocketConnectionDelegate,scanQRCodeCo
         let hostnameString = String(data: hostnameData!, encoding: String.Encoding.ascii)
         
         return (keyData!, idString!, hostnameString!)
+    }
+    
+    //loginvcDelegate
+    func loginvcDel() {
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1) {
+            let value = UserDefaults.standard.value(forKey: "DeviceIdentifiers")
+            
+            if (value != nil) {
+                print(value!);
+            }
+            
+            if let devices = value as? [String] {
+                for device in devices {
+                    let wsc = WebSocketConnection(id: device)
+                    
+                    self.currentConnection = wsc
+                    
+                    wsc.delegate = self
+                    wsc.webSocketConnect()
+                    self.connections[device] = wsc            }
+            }
+            
+            self.tableview?.reloadData()
+        }
     }
     
     override func didReceiveMemoryWarning() {

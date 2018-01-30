@@ -13,4 +13,5 @@
 @property (nonatomic, strong) UILabel *addLab;
 @property (nonatomic, strong) UILabel *ipLab;
 @property (nonatomic, strong) UILabel *wayLab;
+@property (nonatomic, strong) UIImageView *img;
 @end

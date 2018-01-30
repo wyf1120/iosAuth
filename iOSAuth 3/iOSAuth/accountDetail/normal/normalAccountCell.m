@@ -58,7 +58,9 @@
     [backgroundView addSubview:wayLab];
     
     UIImageView *img = [[UIImageView alloc] init];
-    img.backgroundColor = [UIColor orangeColor];
+    //img.backgroundColor = [UIColor orangeColor];
+    img.image = [UIImage imageNamed:@"normal"];
+    _img = img;
     [backgroundView addSubview:img];
     
     UILabel *blockHeight = [[UILabel alloc] init];
@@ -103,7 +105,7 @@
     [img mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(timeLab.mas_top);
         make.right.mas_equalTo(-20*WIDTH);
-        make.size.mas_equalTo(CGSizeMake(80*WIDTH, 50*HEIGHT));
+        make.size.mas_equalTo(CGSizeMake(40*WIDTH, 40*HEIGHT));
     }];
     
     [blockHeight mas_makeConstraints:^(MASConstraintMaker *make) {

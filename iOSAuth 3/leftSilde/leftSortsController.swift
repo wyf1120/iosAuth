@@ -80,6 +80,13 @@ class leftSortsController: UIViewController, UITableViewDelegate,UITableViewData
             appdelegate.leftSvc?.closeLeftView()
             appdelegate.navigationController?.pushViewController(blueTooth, animated: true)
             break
+        case 2:
+            tableView.deselectRow(at: indexPath, animated: true)
+            let appdelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+            let blueTooth = setController()
+            appdelegate.leftSvc?.closeLeftView()
+            appdelegate.navigationController?.pushViewController(blueTooth, animated: true)
+            break
         default:
             break
         }

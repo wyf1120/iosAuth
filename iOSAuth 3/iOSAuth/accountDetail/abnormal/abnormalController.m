@@ -66,6 +66,7 @@
     else
     {
         normalAccountCell *cell = [tableView dequeueReusableCellWithIdentifier:@"normalCell" forIndexPath:indexPath];
+        cell.img.image = [UIImage imageNamed:@"abnormal"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }

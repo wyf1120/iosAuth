@@ -34,6 +34,13 @@
 		A49F745D201F1FB10010D7E0 /* abnormalDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49F745C201F1FB10010D7E0 /* abnormalDetailController.swift */; };
 		A49F745F201F20350010D7E0 /* mapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49F745E201F20350010D7E0 /* mapCell.swift */; };
 		A49F7461201F307E0010D7E0 /* normalDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49F7460201F307E0010D7E0 /* normalDetailController.swift */; };
+		A49F746820201F8D0010D7E0 /* setCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A49F746420201F8D0010D7E0 /* setCell.m */; };
+		A49F746920201F8D0010D7E0 /* setCell3.m in Sources */ = {isa = PBXBuildFile; fileRef = A49F746520201F8D0010D7E0 /* setCell3.m */; };
+		A49F746A20201F8D0010D7E0 /* setController.m in Sources */ = {isa = PBXBuildFile; fileRef = A49F746720201F8D0010D7E0 /* setController.m */; };
+		A49F746D202023AE0010D7E0 /* loginController.m in Sources */ = {isa = PBXBuildFile; fileRef = A49F746B202023AE0010D7E0 /* loginController.m */; };
+		A49F7471202025170010D7E0 /* uiBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = A49F7470202025160010D7E0 /* uiBaseController.m */; };
+		A49F747720204EFA0010D7E0 /* keyboardToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = A49F747320204EFA0010D7E0 /* keyboardToolView.m */; };
+		A49F747820204EFA0010D7E0 /* wyfProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = A49F747520204EFA0010D7E0 /* wyfProgressView.m */; };
 		A4B2C971200A716C00D8352A /* UIColor+HEX.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B2C96B200A716C00D8352A /* UIColor+HEX.m */; };
 		A4B2C972200A716C00D8352A /* QRView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B2C96C200A716C00D8352A /* QRView.m */; };
 		A4B2C973200A716C00D8352A /* ScanQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B2C970200A716C00D8352A /* ScanQRCodeViewController.m */; };
@@ -147,6 +154,20 @@
 		A49F745C201F1FB10010D7E0 /* abnormalDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = abnormalDetailController.swift; sourceTree = "<group>"; };
 		A49F745E201F20350010D7E0 /* mapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapCell.swift; sourceTree = "<group>"; };
 		A49F7460201F307E0010D7E0 /* normalDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = normalDetailController.swift; sourceTree = "<group>"; };
+		A49F746220201F8C0010D7E0 /* setCell3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = setCell3.h; sourceTree = "<group>"; };
+		A49F746320201F8D0010D7E0 /* setCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = setCell.h; sourceTree = "<group>"; };
+		A49F746420201F8D0010D7E0 /* setCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = setCell.m; sourceTree = "<group>"; };
+		A49F746520201F8D0010D7E0 /* setCell3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = setCell3.m; sourceTree = "<group>"; };
+		A49F746620201F8D0010D7E0 /* setController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = setController.h; sourceTree = "<group>"; };
+		A49F746720201F8D0010D7E0 /* setController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = setController.m; sourceTree = "<group>"; };
+		A49F746B202023AE0010D7E0 /* loginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loginController.m; sourceTree = "<group>"; };
+		A49F746C202023AE0010D7E0 /* loginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loginController.h; sourceTree = "<group>"; };
+		A49F746F202025160010D7E0 /* uiBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uiBaseController.h; sourceTree = "<group>"; };
+		A49F7470202025160010D7E0 /* uiBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = uiBaseController.m; sourceTree = "<group>"; };
+		A49F747320204EFA0010D7E0 /* keyboardToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = keyboardToolView.m; sourceTree = "<group>"; };
+		A49F747420204EFA0010D7E0 /* keyboardToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = keyboardToolView.h; sourceTree = "<group>"; };
+		A49F747520204EFA0010D7E0 /* wyfProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wyfProgressView.m; sourceTree = "<group>"; };
+		A49F747620204EFA0010D7E0 /* wyfProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wyfProgressView.h; sourceTree = "<group>"; };
 		A4B2C964200867C400D8352A /* iOSAuth-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOSAuth-Bridging-Header.h"; sourceTree = "<group>"; };
 		A4B2C96B200A716C00D8352A /* UIColor+HEX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HEX.m"; sourceTree = "<group>"; };
 		A4B2C96C200A716C00D8352A /* QRView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRView.m; sourceTree = "<group>"; };
@@ -400,6 +421,10 @@
 		A4B2C9632008676500D8352A /* ocfile */ = {
 			isa = PBXGroup;
 			children = (
+				A49F747420204EFA0010D7E0 /* keyboardToolView.h */,
+				A49F747320204EFA0010D7E0 /* keyboardToolView.m */,
+				A49F747620204EFA0010D7E0 /* wyfProgressView.h */,
+				A49F747520204EFA0010D7E0 /* wyfProgressView.m */,
 				A4D375262016D8BA00EE71FE /* PrefixHeader.pch */,
 				A4C082FC200C8C8B00EF0B08 /* DMCAlertCenter.h */,
 				A4C082FB200C8C8B00EF0B08 /* DMCAlertCenter.m */,
@@ -419,6 +444,16 @@
 		A4D375172014E5A700EE71FE /* setting */ = {
 			isa = PBXGroup;
 			children = (
+				A49F746320201F8D0010D7E0 /* setCell.h */,
+				A49F746420201F8D0010D7E0 /* setCell.m */,
+				A49F746220201F8C0010D7E0 /* setCell3.h */,
+				A49F746520201F8D0010D7E0 /* setCell3.m */,
+				A49F746620201F8D0010D7E0 /* setController.h */,
+				A49F746720201F8D0010D7E0 /* setController.m */,
+				A49F746C202023AE0010D7E0 /* loginController.h */,
+				A49F746B202023AE0010D7E0 /* loginController.m */,
+				A49F746F202025160010D7E0 /* uiBaseController.h */,
+				A49F7470202025160010D7E0 /* uiBaseController.m */,
 			);
 			path = setting;
 			sourceTree = "<group>";
@@ -739,6 +774,7 @@
 				FCF1C15C1FC676880019F764 /* ConstraintView+Extensions.swift in Sources */,
 				A4D375232015D41800EE71FE /* blueToothController.swift in Sources */,
 				A4771C812013953000A42514 /* LeftSlideViewController.m in Sources */,
+				A49F746820201F8D0010D7E0 /* setCell.m in Sources */,
 				A4D375292016E39F00EE71FE /* normalAccountCell.m in Sources */,
 				A46B8B62201EC89300055171 /* barChartCell.swift in Sources */,
 				FCF1C1631FC676880019F764 /* LayoutConstraint.swift in Sources */,
@@ -746,6 +782,8 @@
 				FCF1C15B1FC676880019F764 /* ConstraintRelatableTarget.swift in Sources */,
 				A4D3751B2014E5EF00EE71FE /* blockChainController.swift in Sources */,
 				A4C082FF200C903E00EF0B08 /* cellDetailController.swift in Sources */,
+				A49F746920201F8D0010D7E0 /* setCell3.m in Sources */,
+				A49F746A20201F8D0010D7E0 /* setController.m in Sources */,
 				A49F745F201F20350010D7E0 /* mapCell.swift in Sources */,
 				A4771C822013953000A42514 /* UIView_extra.m in Sources */,
 				A49F7461201F307E0010D7E0 /* normalDetailController.swift in Sources */,
@@ -758,7 +796,9 @@
 				A44AA4201E6D144A00C6247E /* QRScannerViewController.swift in Sources */,
 				A4B2C971200A716C00D8352A /* UIColor+HEX.m in Sources */,
 				FCF1C14F1FC676880019F764 /* ConstraintMaker.swift in Sources */,
+				A49F7471202025170010D7E0 /* uiBaseController.m in Sources */,
 				FCF1C1501FC676880019F764 /* ConstraintLayoutGuideDSL.swift in Sources */,
+				A49F746D202023AE0010D7E0 /* loginController.m in Sources */,
 				FCF1C1661FC676880019F764 /* ConstraintDSL.swift in Sources */,
 				A4771C7720134B7100A42514 /* MainController.swift in Sources */,
 				A439BA881E6ED1A500769EA8 /* AuthenticationPushViewController.swift in Sources */,
@@ -773,6 +813,7 @@
 				FCF1C16B1FC676880019F764 /* ConstraintAttributes.swift in Sources */,
 				FCF1C1691FC676880019F764 /* ConstraintPriorityTarget.swift in Sources */,
 				A4D375212015977900EE71FE /* bluetoothCell.swift in Sources */,
+				A49F747720204EFA0010D7E0 /* keyboardToolView.m in Sources */,
 				FCF1C1701FC676940019F764 /* SSLSecurity.swift in Sources */,
 				A4758BD62016355E00A976AF /* normalController.m in Sources */,
 				A4E855161E6D76C100F09370 /* MainTableViewController.swift in Sources */,
@@ -789,6 +830,7 @@
 				A4D375752018839900EE71FE /* lineChartViewCell.swift in Sources */,
 				A4515B531E71014E00BB65A9 /* WebSocketConnection.swift in Sources */,
 				FCF1C1561FC676880019F764 /* ConstraintDescription.swift in Sources */,
+				A49F747820204EFA0010D7E0 /* wyfProgressView.m in Sources */,
 				A4C082FD200C8C8B00EF0B08 /* DMCAlertCenter.m in Sources */,
 				FCF1C15E1FC676880019F764 /* ConstraintRelation.swift in Sources */,
 				FCF1C15A1FC676880019F764 /* ConstraintViewDSL.swift in Sources */,

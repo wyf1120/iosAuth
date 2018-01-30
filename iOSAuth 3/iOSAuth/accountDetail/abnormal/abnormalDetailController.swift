@@ -51,6 +51,7 @@ class abnormalDetailController: UIViewController,UITableViewDataSource,UITableVi
         if indexPath.row == 0 {
             let cell:normalAccountCell = tableView.dequeueReusableCell(withIdentifier: "normalCell", for: indexPath) as! normalAccountCell
             cell.selectionStyle = .none
+            cell.img.image = UIImage.init(named: "abnormal")
             return cell
         }
         else
