@@ -52,8 +52,8 @@ class deviceConnectionCell: UITableViewCell {
         if connection.label != nil
         {
             //let index = connection.label
-            
-            admin.text = "admin: " + connection.label!.substring(to: connection.label!.index(connection.label!.startIndex, offsetBy:4))
+            admin.adjustsFontSizeToFitWidth = true
+            admin.text = "admin: " + connection.label!.substring(to: connection.label!.index(connection.label!.startIndex, offsetBy:5))
         }
         
         connetionNum.text = connection.code ?? ""

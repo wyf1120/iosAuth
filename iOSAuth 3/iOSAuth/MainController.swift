@@ -11,6 +11,7 @@ import CryptoSwift
 
 class MainController: UIViewController ,WebSocketConnectionDelegate,scanQRCodeControllerDelegate,loginvcDelegate,UITableViewDelegate,UITableViewDataSource {
     
+    var idArr = [String]()
     
     var connections = [String: WebSocketConnection]()
     
@@ -30,6 +31,18 @@ class MainController: UIViewController ,WebSocketConnectionDelegate,scanQRCodeCo
         super.viewDidLoad()
 
         self.view.backgroundColor = UIColor.white
+        
+        let deviceInfo = ["Auth://UU9id2JEaW5rWUpic0tkOExUb2xwampQNlgxTDdtQUw=-RVRuWlZOb2Zva2NieDhxMTNyTno=-N1Jib3pPd2E=",
+                          "Auth://NUZJaWpGV2dIQ0ZYd0RiSDYxYTU3S1B5RUtFS1d4SEk=-d1piMVlKQjI5aHhJT3JsZ3dLNVE=-N1Jib3pPd2E=",
+                          "Auth://WXNaVEtwbTVWSEdybFpQUXFHb1h5cEZMZ3lZaFdDY0Q=-YWhXOWtxQWRDR0E3NlNhdFVRYlA=-N1Jib3pPd2E="]
+        
+        for devId in deviceInfo {
+            let value = parseURL(url: devId)
+            idArr.append(value.id)
+        }
+        print("解析ID：\(String(describing: idArr))")
+        //UserDefaults.standard.set(idArr, forKey: "DeviceIdentifiers")
+        
         
         let loginValue = UserDefaults.standard.value(forKey: "loginSuccess")
         if loginValue == nil {
@@ -83,7 +96,7 @@ class MainController: UIViewController ,WebSocketConnectionDelegate,scanQRCodeCo
         //        tableView.rowHeight = UITableViewAutomaticDimension
         self.tableview?.tableFooterView = UIView()
         
-        
+        //firstLoadInfo()
         
         // Do any additional setup after loading the view.
     }
@@ -96,6 +109,7 @@ class MainController: UIViewController ,WebSocketConnectionDelegate,scanQRCodeCo
         let cell:deviceConnectionCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! deviceConnectionCell
         
         let pushConnect = Array(connections.values)[indexPath.row]
+        
         if(pushConnect.hasNewPush) {
             
             if(!isPush)
@@ -128,14 +142,16 @@ class MainController: UIViewController ,WebSocketConnectionDelegate,scanQRCodeCo
         return "删除";
     }
     
+    
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if let cell = tableView.cellForRow(at: indexPath) as? DeviceConnectionTableViewCell {
+        if let cell = tableView.cellForRow(at: indexPath) as? deviceConnectionCell {
             cell.connection?.isRetry = false
             cell.connection?.socket?.disconnect()
             self.connections.removeValue(forKey: (cell.connection?.id)!)
             
-            //            UserDefaults.standard.set(Array(self.connections.keys), forKey: "DeviceIdentifiers")
-            //            UserDefaults.standard.synchronize()
+                        UserDefaults.standard.set(Array(self.connections.keys), forKey: "DeviceIdentifiers")
+                        UserDefaults.standard.synchronize()
             
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
@@ -146,7 +162,7 @@ class MainController: UIViewController ,WebSocketConnectionDelegate,scanQRCodeCo
     
     func scanSuccess(_ str: String!) {
         navigationController?.popViewController(animated: true)
-        print("get qrcode :\(str)")
+        print("get qrcode :------\(str)------")
         
         //let value = parseURL(url: url)
         let value = parseURL(url: str)
@@ -156,6 +172,46 @@ class MainController: UIViewController ,WebSocketConnectionDelegate,scanQRCodeCo
         currentKey = value.key
         
         print("id = ", currentID ?? "空id", "hostname = ", currentHostname ?? "空hostname", "key = ", currentKey ?? "空key")
+        
+        print("数组的keys：\(connections.keys)")
+        
+        if connections.keys.contains(currentID!) {
+            // delete the connection and information before
+            
+            connections[currentID!]?.isRetry = false
+            connections[currentID!]?.socket?.disconnect()
+            connections.removeValue(forKey: currentID!)
+            
+            UserDefaults.standard.set(Array(connections.keys), forKey: "DeviceIdentifiers")
+            UserDefaults.standard.synchronize()
+            
+            
+        }
+        currentConnection = WebSocketConnection(id: currentID!, key: currentKey!, hostname: currentHostname!)
+        currentConnection?.delegate = self as? WebSocketConnectionDelegate
+        currentConnection?.webSocketConnect()
+    }
+    
+    func firstLoadInfo() {
+        let deviceInfo = ["Auth://UU9id2JEaW5rWUpic0tkOExUb2xwampQNlgxTDdtQUw=-RVRuWlZOb2Zva2NieDhxMTNyTno=-N1Jib3pPd2E=",
+                          "Auth://NUZJaWpGV2dIQ0ZYd0RiSDYxYTU3S1B5RUtFS1d4SEk=-d1piMVlKQjI5aHhJT3JsZ3dLNVE=-N1Jib3pPd2E=",
+                          "Auth://WXNaVEtwbTVWSEdybFpQUXFHb1h5cEZMZ3lZaFdDY0Q=-YWhXOWtxQWRDR0E3NlNhdFVRYlA=-N1Jib3pPd2E="]
+        
+        for info in deviceInfo {
+            loadInfo(str: info)
+        }
+    }
+    
+    func loadInfo(str:String) {
+        let value = parseURL(url: str)
+        
+        currentID = value.id
+        currentHostname = value.hostname
+        currentKey = value.key
+        
+        print("id = ", currentID ?? "空id", "hostname = ", currentHostname ?? "空hostname", "key = ", currentKey ?? "空key")
+        
+        print("数组的keys：\(connections.keys)")
         
         if connections.keys.contains(currentID!) {
             // delete the connection and information before
