@@ -40,10 +40,10 @@ class MainController: UIViewController ,WebSocketConnectionDelegate,scanQRCodeCo
             let value = parseURL(url: devId)
             idArr.append(value.id)
         }
-        print("解析ID：\(String(describing: idArr))")
+
         //UserDefaults.standard.set(idArr, forKey: "DeviceIdentifiers")
         
-        
+     
         let loginValue = UserDefaults.standard.value(forKey: "loginSuccess")
         if loginValue == nil {
             let loginVC = loginController()
@@ -72,7 +72,7 @@ class MainController: UIViewController ,WebSocketConnectionDelegate,scanQRCodeCo
             
             self.tableview?.reloadData()
         }
-        
+       
         self.tableview = UITableView(frame: self.view.bounds, style: .plain)
         self.tableview?.register(UINib.init(nibName: "deviceConnectionCell", bundle: nil), forCellReuseIdentifier: "cell")
         self.tableview?.delegate = self
@@ -107,7 +107,7 @@ class MainController: UIViewController ,WebSocketConnectionDelegate,scanQRCodeCo
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:deviceConnectionCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! deviceConnectionCell
-        
+        cell.selectionStyle = .none
         let pushConnect = Array(connections.values)[indexPath.row]
         
         if(pushConnect.hasNewPush) {
@@ -193,9 +193,15 @@ class MainController: UIViewController ,WebSocketConnectionDelegate,scanQRCodeCo
     }
     
     func firstLoadInfo() {
-        let deviceInfo = ["Auth://UU9id2JEaW5rWUpic0tkOExUb2xwampQNlgxTDdtQUw=-RVRuWlZOb2Zva2NieDhxMTNyTno=-N1Jib3pPd2E=",
-                          "Auth://NUZJaWpGV2dIQ0ZYd0RiSDYxYTU3S1B5RUtFS1d4SEk=-d1piMVlKQjI5aHhJT3JsZ3dLNVE=-N1Jib3pPd2E=",
-                          "Auth://WXNaVEtwbTVWSEdybFpQUXFHb1h5cEZMZ3lZaFdDY0Q=-YWhXOWtxQWRDR0E3NlNhdFVRYlA=-N1Jib3pPd2E="]
+        
+        
+        
+//        let deviceInfo = ["Auth://UU9id2JEaW5rWUpic0tkOExUb2xwampQNlgxTDdtQUw=-RVRuWlZOb2Zva2NieDhxMTNyTno=-N1Jib3pPd2E=",
+//                          "Auth://NUZJaWpGV2dIQ0ZYd0RiSDYxYTU3S1B5RUtFS1d4SEk=-d1piMVlKQjI5aHhJT3JsZ3dLNVE=-N1Jib3pPd2E=",
+//                          "Auth://WXNaVEtwbTVWSEdybFpQUXFHb1h5cEZMZ3lZaFdDY0Q=-YWhXOWtxQWRDR0E3NlNhdFVRYlA=-N1Jib3pPd2E="]
+        
+        let deviceInfo = ["Auth://UU9id2JEaW5rWUpic0tkOExUb2xwampQNlgxTDdtQUw=-RVRuWlZOb2Zva2NieDhxMTNyTno=-N1Jib3pPd2E="]
+        
         
         for info in deviceInfo {
             loadInfo(str: info)
@@ -226,7 +232,7 @@ class MainController: UIViewController ,WebSocketConnectionDelegate,scanQRCodeCo
             
         }
         currentConnection = WebSocketConnection(id: currentID!, key: currentKey!, hostname: currentHostname!)
-        currentConnection?.delegate = self as? WebSocketConnectionDelegate
+        currentConnection?.delegate = self
         currentConnection?.webSocketConnect()
     }
     
