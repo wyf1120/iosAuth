@@ -104,6 +104,8 @@ class MainController: UIViewController ,WebSocketConnectionDelegate,scanQRCodeCo
         // Do any additional setup after loading the view.
     }
     
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return connections.count
     }

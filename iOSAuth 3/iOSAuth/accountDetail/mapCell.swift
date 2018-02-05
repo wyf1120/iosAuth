@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import MapKit
 class mapCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -32,7 +32,9 @@ class mapCell: UITableViewCell {
         loginState.font = UIFont.systemFont(ofSize: 30)
         self.contentView.addSubview(loginState)
         
-        let mapView = UIView()
+        let mapView = MKMapView()
+        mapView.mapType = .standard
+        
         mapView.backgroundColor = UIColor.orange
         self.contentView.addSubview(mapView)
         
@@ -40,8 +42,18 @@ class mapCell: UITableViewCell {
         title.text = "mapView"
         title.textAlignment = .center
         title.textColor = UIColor.white
+        
+        let location = CLLocationCoordinate2D(latitude: 114.41, longitude: 30.46)
+        var span = MKCoordinateSpan()
+        span.latitudeDelta = 0.01
+        span.longitudeDelta = 0.01
+        let region = MKCoordinateRegionMake(location, span)
+        mapView.setRegion(region, animated: true)
+        
+
         title.font = UIFont.systemFont(ofSize: 30)
         mapView.addSubview(title)
+        
         
         loginState.snp.makeConstraints { (make) in
             make.top.equalTo(0)
