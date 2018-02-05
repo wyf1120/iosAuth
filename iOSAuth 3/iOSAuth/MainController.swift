@@ -36,12 +36,23 @@ class MainController: UIViewController ,WebSocketConnectionDelegate,scanQRCodeCo
                           "Auth://NUZJaWpGV2dIQ0ZYd0RiSDYxYTU3S1B5RUtFS1d4SEk=-d1piMVlKQjI5aHhJT3JsZ3dLNVE=-N1Jib3pPd2E=",
                           "Auth://WXNaVEtwbTVWSEdybFpQUXFHb1h5cEZMZ3lZaFdDY0Q=-YWhXOWtxQWRDR0E3NlNhdFVRYlA=-N1Jib3pPd2E="]
         
-        for devId in deviceInfo {
+        let deviceInfo1 = ["Auth://V2FVTUZZVWRQT1dmUWJkTENMQnlPbjN0WUFsVGhPeWI=-cGNxVzJTMWRXdUxsMXJVVEE1Smk=-N1Jib3pPd2E=",
+                           "Auth://WWJxQUVGVmVLcW54amxaZ0Z6akVqWGp5aWZOOFZFVDM=-RWljd05zZEhNNTJNRmg0Q2JzTU4=-N1Jib3pPd2E="
+                          ]
+        
+        for devId in deviceInfo1 {
             let value = parseURL(url: devId)
+            
+            let keychainData = getKeyFromKeyChain(forID: devId)
+            if keychainData == nil
+            {
+                saveKeyInKeyChain(key: value.key, hostname: value.hostname, forID: value.id)
+            }
+            
             idArr.append(value.id)
         }
 
-        //UserDefaults.standard.set(idArr, forKey: "DeviceIdentifiers")
+        UserDefaults.standard.set(idArr, forKey: "DeviceIdentifiers")
         
      
         let loginValue = UserDefaults.standard.value(forKey: "loginSuccess")
@@ -100,6 +111,8 @@ class MainController: UIViewController ,WebSocketConnectionDelegate,scanQRCodeCo
         
         // Do any additional setup after loading the view.
     }
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return connections.count
@@ -389,6 +402,62 @@ class MainController: UIViewController ,WebSocketConnectionDelegate,scanQRCodeCo
             
             self.tableview?.reloadData()
         }
+    }
+    
+    func saveKeyInKeyChain(key: Data, hostname: String, forID: String) {
+        print("saveKeyInKeyChain called")
+        var searchDictionary = [String: AnyObject]()
+        
+        searchDictionary[kSecAttrAccount as String] = forID as AnyObject?
+        searchDictionary[kSecClass as String] = kSecClassInternetPassword
+        searchDictionary[kSecAttrType as String] = "SecK" as AnyObject
+        
+        // If id existed, update the data
+        if SecItemCopyMatching(searchDictionary as CFDictionary, nil) == noErr {
+            var updateDictionary = [String: AnyObject]()
+            updateDictionary[kSecAttrServer as String] = hostname as AnyObject?
+            updateDictionary[kSecValueData as String] = key as AnyObject?
+            let status = SecItemUpdate(searchDictionary as CFDictionary, updateDictionary as CFDictionary)
+            guard status == 0 else {
+                print(status)
+                return
+            }
+        }
+        else {
+            searchDictionary[kSecAttrServer as String] = hostname as AnyObject?
+            searchDictionary[kSecValueData as String] = key as AnyObject?
+            let status = SecItemAdd(searchDictionary as CFDictionary, nil)
+            guard status == 0 else {
+                print(status)
+                return
+            }
+        }
+    }
+    
+    func getKeyFromKeyChain(forID: String) -> (key: Data, hostname: String) {
+        print("getKeyFromKeyChain called")
+        // init search dictionary
+        var searchDictionary = [String: AnyObject]()
+        
+        searchDictionary[kSecAttrAccount as String] = forID as AnyObject?
+        searchDictionary[kSecClass as String] = kSecClassInternetPassword
+        searchDictionary[kSecAttrType as String] = "SecK" as AnyObject
+        searchDictionary[kSecReturnAttributes as String] = kCFBooleanTrue
+        searchDictionary[kSecReturnData as String] = kCFBooleanTrue
+        
+        var queryResult: AnyObject?
+        
+        let status = SecItemCopyMatching(searchDictionary as CFDictionary, &queryResult)
+        guard status == 0 else {
+            print(status)
+            return (Data(), "")
+        }
+        let queryResultDict = queryResult as! [String: AnyObject]
+        
+        let hostname = queryResultDict[kSecAttrServer as String] as! String
+        let key = queryResultDict[kSecValueData as String] as! Data
+        
+        return (key, hostname)
     }
     
     override func didReceiveMemoryWarning() {

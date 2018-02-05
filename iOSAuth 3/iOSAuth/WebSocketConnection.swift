@@ -97,6 +97,24 @@ class WebSocketConnection: WebSocketDelegate{
         self.key = value.key
         self.hostname = value.hostname
         
+        if id == "pcqW2S1dWuLl1rUTA5Ji" {
+            let seed = getTOTPFromKeyChain(forID: id)
+            if seed == nil
+            {
+                saveLabelAndTOTP(label: "wyf12 | Web SDK1514967377", seed: "CW2MJMRBYVVLN6EA")
+            }
+
+        }
+        
+        if id == "EicwNsdHM52MFh4CbsMN" {
+            let seed = getTOTPFromKeyChain(forID: id)
+            if seed == nil
+            {
+                saveLabelAndTOTP(label: "wch01 | Web SDK1514967377", seed: "BBPEUDLNY4AQPE5K")
+            }
+            
+        }
+        
         socket = WebSocket(url: URL(string: URL_PREFIX + hostname! + "/" + id + URL_SUFFIX)!)
         socket?.delegate = self
         
@@ -216,6 +234,9 @@ class WebSocketConnection: WebSocketDelegate{
                 
             // Receive Data
             case "info":
+                
+                print(json)
+                
                 saveLabelAndTOTP(label: json["data"] as! String, seed: json["seed"] as! String)
                 break
             
