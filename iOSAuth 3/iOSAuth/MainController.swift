@@ -32,16 +32,19 @@ class MainController: UIViewController ,WebSocketConnectionDelegate,scanQRCodeCo
 
         self.view.backgroundColor = UIColor.white
         
-        let deviceInfo = ["Auth://UU9id2JEaW5rWUpic0tkOExUb2xwampQNlgxTDdtQUw=-RVRuWlZOb2Zva2NieDhxMTNyTno=-N1Jib3pPd2E=",
-                          "Auth://NUZJaWpGV2dIQ0ZYd0RiSDYxYTU3S1B5RUtFS1d4SEk=-d1piMVlKQjI5aHhJT3JsZ3dLNVE=-N1Jib3pPd2E=",
-                          "Auth://WXNaVEtwbTVWSEdybFpQUXFHb1h5cEZMZ3lZaFdDY0Q=-YWhXOWtxQWRDR0E3NlNhdFVRYlA=-N1Jib3pPd2E="]
-        
-        for devId in deviceInfo {
-            let value = parseURL(url: devId)
-            idArr.append(value.id)
-        }
-
-        //UserDefaults.standard.set(idArr, forKey: "DeviceIdentifiers")
+//        let deviceInfo = ["Auth://UU9id2JEaW5rWUpic0tkOExUb2xwampQNlgxTDdtQUw=-RVRuWlZOb2Zva2NieDhxMTNyTno=-N1Jib3pPd2E=",
+//                          "Auth://NUZJaWpGV2dIQ0ZYd0RiSDYxYTU3S1B5RUtFS1d4SEk=-d1piMVlKQjI5aHhJT3JsZ3dLNVE=-N1Jib3pPd2E=",
+//                          "Auth://WXNaVEtwbTVWSEdybFpQUXFHb1h5cEZMZ3lZaFdDY0Q=-YWhXOWtxQWRDR0E3NlNhdFVRYlA=-N1Jib3pPd2E="]
+//
+//        for devId in deviceInfo {
+//            let value = parseURL(url: devId)
+//
+//            saveKeyInKeyChain(key: value.key, hostname: value.hostname, forID: value.id)
+//
+//            idArr.append(value.id)
+//        }
+//
+//        UserDefaults.standard.set(idArr, forKey: "DeviceIdentifiers")
         
      
         let loginValue = UserDefaults.standard.value(forKey: "loginSuccess")
@@ -388,6 +391,37 @@ class MainController: UIViewController ,WebSocketConnectionDelegate,scanQRCodeCo
             }
             
             self.tableview?.reloadData()
+        }
+    }
+    
+    
+    func saveKeyInKeyChain(key: Data, hostname: String, forID: String) {
+        print("saveKeyInKeyChain called")
+        var searchDictionary = [String: AnyObject]()
+        
+        searchDictionary[kSecAttrAccount as String] = forID as AnyObject?
+        searchDictionary[kSecClass as String] = kSecClassInternetPassword
+        searchDictionary[kSecAttrType as String] = "SecK" as AnyObject
+        
+        // If id existed, update the data
+        if SecItemCopyMatching(searchDictionary as CFDictionary, nil) == noErr {
+            var updateDictionary = [String: AnyObject]()
+            updateDictionary[kSecAttrServer as String] = hostname as AnyObject?
+            updateDictionary[kSecValueData as String] = key as AnyObject?
+            let status = SecItemUpdate(searchDictionary as CFDictionary, updateDictionary as CFDictionary)
+            guard status == 0 else {
+                print(status)
+                return
+            }
+        }
+        else {
+            searchDictionary[kSecAttrServer as String] = hostname as AnyObject?
+            searchDictionary[kSecValueData as String] = key as AnyObject?
+            let status = SecItemAdd(searchDictionary as CFDictionary, nil)
+            guard status == 0 else {
+                print(status)
+                return
+            }
         }
     }
     

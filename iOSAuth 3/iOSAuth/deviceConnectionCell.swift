@@ -35,6 +35,7 @@ class deviceConnectionCell: UITableViewCell {
             
             var num:Int = Int(floor(counter.truncatingRemainder(dividingBy: 30)))
             print("num: \(30 - num)")
+            self.connetionNum.text = "960407"
             DispatchQueue.main.async(){
                 //self.timeProgress.setProgress(Float(progress), animated: true)
                 self.timeLab.text = "(\(30 - num)s)"
